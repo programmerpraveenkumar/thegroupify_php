@@ -32,6 +32,7 @@ class database{
       echo json_encode(array("empty"=>'false'));
     }
     public function query_exe($q){
+//      echo $q;
       return $this->_mysql->query($q);
     }
     public function one_fetch_query($q){

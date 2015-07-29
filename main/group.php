@@ -34,5 +34,20 @@ class group extends database {
     }
     $this->empty_error();
   }
+  public function groupsearch(){
+    $_POST = array('user_id'=>'7','search_content'=>'up');
+    //todo check minimum length in search_content
+    if(!empty($_POST['user_id']) && !empty($_POST['search_content'])){
+      $user_id = $_POST['user_id'];
+      $search_content = $_POST['search_content'];
+      echo '<pre>';
+      $data = array();
+      $q_res = $this->query_exe("SELECT g.id,name,(select id from members where  g_id = g.id and u_id ='$user_id') exist FROM `group` as g where name LIKE '%$search_content%'");
+      while($res = $q_res->fetch_object()){
+            array_push($data,$res);
+      }
+      echo json_encode($data);
+    }
+  }
 }
  ?>
