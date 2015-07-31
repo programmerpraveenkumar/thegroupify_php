@@ -14,7 +14,7 @@ class database{
         return $get->fetch_object();
     }
     protected function jsonOneFetchProcedure($qury){
-        return json_encode($this->oneFetchProcedure($qury));
+      return json_encode(array_merge(array('error'=>''),(array)$this->oneFetchProcedure($qury)));
     }
     public function DB_refreshData(){
         $tmp = '';
@@ -29,7 +29,7 @@ class database{
        return json_encode($array);
     }
     public function empty_error(){
-      echo json_encode(array("empty"=>'false'));
+          echo json_encode(array("empty"=>'false'));
     }
     public function query_exe($q){
 //      echo $q;

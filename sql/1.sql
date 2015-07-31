@@ -71,7 +71,7 @@ CREATE TABLE `group` (
 
 LOCK TABLES `group` WRITE;
 /*!40000 ALTER TABLE `group` DISABLE KEYS */;
-INSERT INTO `group` VALUES (1,'test',7,NULL,'0000-00-00'),(2,'test',7,NULL,'0000-00-00'),(3,'test',7,NULL,'1437893661'),(4,'update7',7,NULL,'1437893686'),(5,'testing_update',4,'this desc for testin for group 4','1437893815'),(6,'groupname update',7,'sample descRiption','1437894465');
+INSERT INTO `group` VALUES (1,'testt',7,NULL,'0000-00-00'),(2,'testt',7,NULL,'0000-00-00'),(3,'testt',7,NULL,'1437893661'),(4,'update7',7,NULL,'1437893686'),(5,'testing_update',4,'this desc for testin for group 4','1437893815'),(6,'groupname update',7,'sample descRiption','1437894465');
 /*!40000 ALTER TABLE `group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `members` (
   KEY `group_id_idx` (`g_id`),
   CONSTRAINT `group_id` FOREIGN KEY (`g_id`) REFERENCES `group` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `user_Id` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,6,8,'0000-00-00'),(2,5,5,'1437902903'),(3,5,7,'1437902973'),(4,4,8,'1437916141');
+INSERT INTO `members` VALUES (1,6,8,'0000-00-00'),(2,5,5,'1437902903'),(3,5,7,'1437902973'),(31,4,23,'1438253217'),(33,4,8,'1438283095');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +130,7 @@ CREATE TABLE `posts` (
 
 LOCK TABLES `posts` WRITE;
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` VALUES (2,5,'0000-00-00',NULL,'first'),(3,5,'0000-00-00',NULL,'conent'),(4,5,'0000-00-00',NULL,'three'),(5,5,'0000-00-00',NULL,'four'),(6,5,'4','1437906882','some more content');
+INSERT INTO `posts` VALUES (2,4,'0000-00-00',NULL,'firsthave suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin wo'),(3,4,'0000-00-00',NULL,'have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin wo'),(4,4,'0000-00-00',NULL,'have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin wo'),(5,4,'0000-00-00',NULL,'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)'),(6,4,'4','1437906882','have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin wo');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +150,7 @@ CREATE TABLE `user` (
   `device_id` varchar(155) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `device_id_UNIQUE` (`device_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +159,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'test','test@gmail.com','123465798',NULL,NULL),(3,NULL,'test@gma.com',NULL,'0000-00-00 00:00:00',NULL),(4,NULL,'1test@gma.com',NULL,'1437850722',NULL),(5,NULL,'praveen@gma.com',NULL,'1437852303','12345'),(7,NULL,'praveen@addresspager.com',NULL,'1437892266','55b47eaa5eefc'),(8,NULL,'kumarpraveen@addresspager.com',NULL,'1437892337','55b47ef11cc91'),(14,NULL,'test@android.com',NULL,'1437929227','55b50f0b1c7f5');
+INSERT INTO `user` VALUES (1,'test','test@gmail.com','123465798',NULL,NULL),(3,NULL,'test@gma.com',NULL,'0000-00-00 00:00:00',NULL),(4,NULL,'1test@gma.com',NULL,'1437850722',NULL),(5,NULL,'praveen@gma.com',NULL,'1437852303','12345'),(7,NULL,'praveen@addresspager.com',NULL,'1437892266','55b47eaa5eefc'),(8,NULL,'kumarpraveen@addresspager.com',NULL,'1437892337','55b47ef11cc91'),(18,NULL,'sometets@addresspager.com',NULL,'1438024694','55b683f6dfe0a'),(19,NULL,'exists@test.com',NULL,'1438024744','55b68428cc8e1'),(23,NULL,'sample@gmail.com',NULL,'1438253158','55ba0066746f0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +213,7 @@ if _type = 'join' then
 select count(id) into total_row from members where g_id= _g_id and u_id = _id;
 if(total_row = 0) then
 insert into members(g_id,u_id,join_on)values(_g_id,_id,unix_timestamp());
-select id,g_id,u_id from members where id = last_insert_id();
+SELECT m.id,m.g_id,m.u_id,m.join_on,g.name as group_name FROM groupify.members as m join `group` as g  on g.id =m.g_id  where m.id  = last_insert_id();
 else
 select 'exist' as 'error';
 end if;
@@ -288,4 +288,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-27 10:04:18
+-- Dump completed on 2015-07-31 11:01:16
